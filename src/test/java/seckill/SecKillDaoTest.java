@@ -4,6 +4,7 @@ import com.shou.seckill.dao.SecKillDao;
 import com.shou.seckill.entity.SecKill;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -47,6 +48,17 @@ public class SecKillDaoTest {
         for (SecKill seckill:secKills) {
             System.out.println(seckill);
         }
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("计算机软件".intern());
+        String str1 = new StringBuilder("计算机").append("软件").toString();
+        String str2 = new StringBuilder("ja").append("va").toString();
+
+        System.out.println(str1.intern() == str1);
+        System.out.println(str2.intern() == str2);
+
     }
 
 }
