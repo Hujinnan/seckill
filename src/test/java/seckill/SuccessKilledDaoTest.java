@@ -21,7 +21,7 @@ public class SuccessKilledDaoTest {
     @Test
     public void insertSuccesKilled() throws Exception {
         //通过联合主键 保证不能重复插入  PRIMARY KEY (seckill_id,user_phone)
-        int insertCount=successKilledDao.insertSuccesKilled(1001,15900519999L);
+        int insertCount=successKilledDao.insertSuccesKilled(1000,15900519999L);
         System.out.println(insertCount);
     }
 

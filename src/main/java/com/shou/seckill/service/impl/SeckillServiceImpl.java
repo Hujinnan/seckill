@@ -35,7 +35,7 @@ public class SeckillServiceImpl implements SeckillService {
     @Autowired
     private SuccessKilledDao successKilledDao;
 
-    //md5加盐字符串，用于混淆MD5
+    //md5加盐，用于混淆MD5
     private final String salt = "asdafs124%^787*^^&&**>?KL";
 
     public List<SecKill> getSeckillList() {
@@ -69,7 +69,7 @@ public class SeckillServiceImpl implements SeckillService {
 
     @Transactional
     public SeckillExecution executeSeckill(long seckillId, long userphone, String md5) throws SeckillException, RepeatException, SeckillCloseException {
-        if(md5 == null || md5.equals(getMD5(seckillId))){
+        if(md5 == null || !md5.equals(getMD5(seckillId))){
             throw new SeckillException("秒杀信息被重写 ");
         }
         //执行秒杀业务： 减库存+记录购买行为
@@ -93,8 +93,10 @@ public class SeckillServiceImpl implements SeckillService {
                 }
             }
         }catch (SeckillCloseException e1){
+            //logger.info("秒杀关闭",e1);
             throw (e1);
         }catch (RepeatException e2){
+            //logger.info("重复秒杀",e2);
             throw (e2);
         }catch (Exception e){
             logger.error(e.getMessage(),e);

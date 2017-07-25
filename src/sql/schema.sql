@@ -32,7 +32,7 @@ CREATE TABLE success_killed(
 `user_phone` bigint NOT NULL comment '用户手机号',
 `state` tinyint NOT NULL DEFAULT -1 comment '状态标识：-1无效,0成功,1已付款，2已发货',
 `create_time` TIMESTAMP NOT NULL comment '创建时间',
-PRIMARY KEY (seckill_id,user_phone), --联合索引
+PRIMARY KEY (seckill_id,user_phone), -- 联合索引
 KEY idx_create_time(create_time)
 )engine=innodb DEFAULT charset=utf8 comment='秒杀成功表';
 
