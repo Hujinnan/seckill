@@ -1,5 +1,7 @@
 package com.shou.seckill.service;
 
+import com.shou.seckill.dto.ExportUrl;
+import com.shou.seckill.dto.SeckillExecution;
 import com.shou.seckill.entity.SecKill;
 import com.shou.seckill.service.impl.SeckillServiceImpl;
 import org.junit.Test;
@@ -41,12 +43,15 @@ public class SeckillServiceTest {
 
     @Test
     public void exportSeckillUrl() throws Exception {
-
+        ExportUrl exportUrl = seckillService.exportSeckillUrl(1002);
+        logger.info("exportUrl={}",exportUrl);
     }
 
     @Test
     public void executeSeckill() throws Exception {
-
+        //SeckillExecution seckillExecution = seckillService.executeSeckill(1000,15900519999L,"b29c4ec4010fc9ed11c3ef5c120febcd");
+        SeckillExecution seckillExecution = seckillService.executeSeckill(1002,15900519999L,"e6bee54827971b07187a1f2d112dcf11");
+        System.out.println(seckillExecution);
     }
 
 }
