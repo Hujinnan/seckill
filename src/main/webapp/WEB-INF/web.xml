@@ -6,6 +6,9 @@
          metadata-complete="true">
 
       <!--配置dispathcerServlet-->
+      <!--简化配置：
+            1、自动注册defaultannotationhadlermapping,annotationmethodhandleradapter
+            1\ti提供一系列数据绑定、数字和日期的format nymberformat datatimeformat,xml、json默认读写支持-->
        <servlet>
          <servlet-name>seckill-dispatcher</servlet-name>
          <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
