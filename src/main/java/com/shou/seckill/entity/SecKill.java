@@ -73,6 +73,14 @@ public class SecKill {
         this.createTime = reateTime;
     }
 
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
     @Override
     public String toString() {
         return "SecKill{" +
